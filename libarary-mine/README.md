@@ -1,8 +1,2 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Pagrindinis puslapis, kuriame yra knygu spintele su skirtingomis spalvomis knygu virseliais ir spintos turi kategoriju pavadinimus: fantazija, romanas, dokumentika ir pns... ant hoverio turetu ismesti salia peles komentara, kuris trumpai pristato pacia knyga, o paspaudus ant knygos turetu buti animacija kaip patraukia perspektyva i desine i nauja puslapi kur fonas yra koks halas ar panasiai ir tada knyga turetu kaip ir issokti ir isiskleisti, ir tada matytum 2 puslapius ir galetum vartyti tarp ju, ir apacioj atsinaujintu knygos puslapio skaiciukas.
+Pacioje knygoje turetu buti mygtukas "grizti i knygyna" ir tada uzsivercia ta knyga ir tave nubloskia atgal i ta knyga lentyna.
