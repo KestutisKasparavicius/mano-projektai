@@ -16,12 +16,16 @@ app.get('/api/books', async (req, res) => {
 	}
 });
 
-app.listen(3001, () => {
-	console.log('Server up on 3001');
+app.get('api/book/:id', async (req, res) => {
+	try {
+		const book = await getBookById(req.params.id);
+		res.json(book);
+	} catch (err) {
+		console.error(err);
+		res.status(500).json({ error: 'Failed to retrieve books' });
+	}
 });
 
-app.get('/book', (req, res) => res.send('Nu zdarova'));
-app.get('/bookz', async (req, res) => {
-	const books = await getAllBooks();
-	res.json(books[0].id);
+app.listen(3001, () => {
+	console.log('Server up on 3001');
 });
