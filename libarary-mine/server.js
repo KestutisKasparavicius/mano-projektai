@@ -1,11 +1,12 @@
 import express from 'express';
 import cors from 'cors';
 import { getAllBooks, getBookById } from './db.js';
+import { db } from './src/db/db.js';
 
 const app = express();
 
 app.use(cors());
-
+app.use(db);
 app.get('/api/books', async (req, res) => {
 	try {
 		const books = await getAllBooks();
