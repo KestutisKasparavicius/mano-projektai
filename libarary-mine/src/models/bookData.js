@@ -1,4 +1,4 @@
-async function GetBooks(db) {
+export async function GetBooks(db) {
 	try {
 		const [rows, fields] = await db.query(
 			`
@@ -13,7 +13,7 @@ async function GetBooks(db) {
 	}
 }
 
-async function GetBookById(db, id) {
+export async function GetBookById(db, id) {
 	try {
 		const [rows, fields] = await db.query(
 			`
@@ -33,7 +33,7 @@ async function GetBookById(db, id) {
 	}
 }
 
-async function CreateBook(db, data) {
+export async function CreateBook(db, data) {
 	try {
 		const [result] = await db.query(
 			`
@@ -61,7 +61,7 @@ async function CreateBook(db, data) {
 	}
 }
 
-async function editBook(db, data) {
+export async function editBook(db, data) {
 	try {
 		const [result] = await db.query(
 			`
@@ -91,7 +91,7 @@ async function editBook(db, data) {
 	}
 }
 
-async function deleteBook(db, id) {
+export async function deleteBook(db, id) {
 	try {
 		const [result] = db.query(
 			`
