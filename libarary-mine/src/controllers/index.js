@@ -4,7 +4,7 @@ import {
 	editBook,
 	GetBookById,
 	GetBooks,
-} from '../models/bookData';
+} from '../models/bookData.js';
 
 //
 // Cia kazkur validavima mandrods reikia padaryti
