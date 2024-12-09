@@ -2,3 +2,6 @@ Pagrindinis puslapis, kuriame yra knygu spintele su skirtingomis spalvomis knygu
 Pacioje knygoje turetu buti mygtukas "grizti i knygyna" ir tada uzsivercia ta knyga ir tave nubloskia atgal i ta knyga lentyna.
 
 https://www.youtube.com/watch?v=N2tpYsPeoCU
+
+wallpaper source:
+https://www.freepik.com/premium-ai-image/cozy-bookstore-with-shelves-full-books-armchair-visitors-created-with-generative-ai_51691526.htm#fromView=keyword&page=1&position=8&uuid=e9043240-ed7a-429c-9975-114c5497bb4c
