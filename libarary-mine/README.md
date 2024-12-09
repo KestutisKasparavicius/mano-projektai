@@ -5,3 +5,6 @@ https://www.youtube.com/watch?v=N2tpYsPeoCU
 
 wallpaper source:
 https://www.freepik.com/premium-ai-image/cozy-bookstore-with-shelves-full-books-armchair-visitors-created-with-generative-ai_51691526.htm#fromView=keyword&page=1&position=8&uuid=e9043240-ed7a-429c-9975-114c5497bb4c
+
+pastels for bookcase
+https://colorhunt.co/palette/8fbdd3e4d1b9be8c63a97155
