@@ -16,13 +16,19 @@ const Home = () => {
       }, []
   )
   return (
-    <div>
-    <ul>
-      {data.map((obj) => {
-        return <li key={obj.autorius}>{obj.pavadinimas}</li>
-      })}
-    </ul>
+    <main>
+      <div className="bookcase">
+    <div className='bookshelf-container'>
+      <div className="bookshelf"></div>
+      <div className="bookshelf"></div>
+      <div className="bookshelf"></div>
     </div>
+    <div className='cabinet'>
+      <span className="door">&#128996;</span>
+      <span className="door">&#128996;</span>
+    </div>
+      </div>
+    </main>
   )
 }
 

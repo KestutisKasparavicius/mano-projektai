@@ -1,0 +1,23 @@
+:root {
+	--bookcase-colour: #743624;
+}
+
+html {
+	min-height: 100%;
+	background: url('./assets/bookstore4k.jpg');
+	background-size: 100% 100%;
+}
+main {
+	display: flex !important;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100vh;
+}
+.bookcase {
+	background-color: var(--bookcase-colour);
+	display: grid;
+	grid-template-rows: repeat(3, 0.75fr);
+	height: 80vh;
+	min-width: 25vw;
+}
