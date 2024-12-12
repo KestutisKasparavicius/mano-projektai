@@ -25,9 +25,9 @@ main {
 }
 
 .bookshelf-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
+	display: grid;
+	grid-auto-rows: 1fr;
+	gap: 1rem;
 	grid-row: span 2;
 	margin: 1rem;
 	background-color: var(--bookcase-colour);
@@ -56,5 +56,24 @@ main {
 
 .bookshelf {
 	background-color: var(--bookcase-background);
-	height: 25%;
+	display: flex;
+}
+
+.book {
+	min-width: 5%;
+	text-align: center;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	background-color: orange;
+	transition: all 0.13s ease-in-out;
+}
+
+.book:hover {
+	transform: translateY(-35px);
+	scale: 1.08;
+	cursor: grab;
+
+	-webkit-box-shadow: 0px 0px 18px 12px rgba(255, 255, 255, 0.76);
+	-moz-box-shadow: 0px 0px 18px 12px rgba(255, 255, 255, 0.76);
+	box-shadow: 0px 0px 18px 12px rgba(255, 255, 255, 0.76);
 }
