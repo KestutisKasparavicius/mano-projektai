@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import Bookcase from '../components/Bookcase';
+import Header from '../components/Header';
 
 const Home = () => {
   const [isLoading, setLoading] = useState(false);
@@ -7,29 +9,40 @@ const Home = () => {
 
   useEffect(() => {
       const fetchData = async () => {
+        setLoading(true);
+        try {
         const response = await fetch("http://localhost:3001/api/book");
         const resData = await response.json();
-        setData(resData);
+        setData(resData)
+        } catch (err) {
+          setErr(err);
+        } finally {
+          setLoading(false)
+        };
+        
+        
       }
       fetchData()
       }, []
   )
+
+  if (isLoading) {
+    return (
+     <div className="loading">Loading..</div>
+    )
+  }
+
+  if (err) {
+    return (
+      <div className="error">Oh no, something broke.</div>
+    )
+  }
   return (
-    <main>
-      <div className="bookcase">
-    <div className='bookshelf-container'>
-      <div className="bookshelf">
-        <div className="book">{data} </div>
-      </div>
-      <div className="bookshelf"></div>
-      <div className="bookshelf"></div>
-    </div>
-    <div className='cabinet'>
-      <span className="door">&#128996;</span>
-      <span className="door">&#128996;</span>
-    </div>
-      </div>
-    </main>
+    <>
+    <Header />
+    <Bookcase bookList={data}/>
+    </>
+    
   )
 }
 
