@@ -6,7 +6,6 @@ const Home = () => {
   const [err, setErr] = useState(false);
 
   useEffect(() => {
-    
       const fetchData = async () => {
         const response = await fetch("http://localhost:3001/api/book");
         const resData = await response.json();
@@ -19,7 +18,9 @@ const Home = () => {
     <main>
       <div className="bookcase">
     <div className='bookshelf-container'>
-      <div className="bookshelf"></div>
+      <div className="bookshelf">
+        <div className="book">{data} </div>
+      </div>
       <div className="bookshelf"></div>
       <div className="bookshelf"></div>
     </div>
