@@ -2,7 +2,7 @@ export async function GetBooks(db) {
 	try {
 		const [rows, fields] = await db.query(
 			`
-            SELECT  pavadinimas, autorius, kategorija, aprasimas, isbn, isleidimo_data, puslapiai, knygos_perziura
+            SELECT  id, pavadinimas, autorius, kategorija, aprasimas, isbn, isleidimo_data, puslapiai, knygos_perziura
             FROM knyga;
             `
 		);
