@@ -1,0 +1,13 @@
+html {
+	background: #db771a;
+	font-family: sans-serif;
+}
+.error {
+	padding: 10rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+img {
+	width: 300px;
+}
