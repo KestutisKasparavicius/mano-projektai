@@ -11,16 +11,19 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import Error from './components/Error.jsx'
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error/>
    },
    {
     path: "/auditorium",
     element: <Auditorium/>,
+    errorElement: <Error/>,
     children: [
       {
         path: "auditorium/book/:bookID",
