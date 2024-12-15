@@ -1,0 +1,22 @@
+header {
+	background-color: orangered;
+	height: 5.5vh;
+	justify-content: center;
+	display: flex;
+}
+nav {
+	min-width: 35vw;
+	display: flex;
+	justify-content: center;
+}
+ul {
+	display: flex;
+}
+
+li {
+	list-style-type: none;
+	a {
+		text-decoration: none;
+		color: slategray;
+	}
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Bookcase from '../components/Bookcase';
 import Header from '../components/Header';
+import Error from '../components/Error';
 
 const Home = () => {
   const [isLoading, setLoading] = useState(false);
@@ -34,7 +35,7 @@ const Home = () => {
 
   if (err) {
     return (
-      <div className="error">Oh no, something broke.</div>
+      <Error/>
     )
   }
   return (
