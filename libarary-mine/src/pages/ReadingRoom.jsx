@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes, { object } from 'prop-types'
 
-const ReadingRoom = (bookObj) => {
+const ReadingRoom = ({children}) => {
   const [book, setBook] = useState([]);
 
 
   return (
-    {
-      if (book) {
-        return <div></div>
-      }
-    }
+      //
+      // Cia children eina, ir per juos pareina parinkta knyga is bookselection. Manrods....
+      <div className="book">Some book info</div>
+    
   )
 }
 
-ReadingRoom.propTypes = {object}
+ReadingRoom.propTypes = {Object}
 
 export default ReadingRoom
