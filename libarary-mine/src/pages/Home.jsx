@@ -27,6 +27,7 @@ const Home = () => {
       }, []
   )
 
+
   if (isLoading) {
     return (
      <div className="loading">Loading..</div>

@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import './normalize.css'
 import App from './App.jsx'
-import Auditorium from './pages/Auditorium.jsx';
+
 
 
 import * as ReactDOM from "react-dom";
@@ -12,22 +12,21 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Error from './components/Error.jsx'
+import ReadingRoom from './pages/ReadingRoom.jsx'
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error/>
    },
    {
-    path: "/auditorium",
-    element: <Auditorium/>,
-    errorElement: <Error/>,
+    path: "/reading-room",
+    element: <ReadingRoom/>,
     children: [
       {
         path: "auditorium/book/:bookID",
-        element: <Auditorium/>
+        element: <ReadingRoom/>
       }
     ]
    },
