@@ -11,12 +11,28 @@ nav {
 }
 ul {
 	display: flex;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	flex: 1;
+	justify-content: space-between;
 }
 
 li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 6em;
+	cursor: pointer;
 	list-style-type: none;
+	transition: 45ms transform ease-out;
+
 	a {
 		text-decoration: none;
 		color: slategray;
 	}
+}
+
+li:hover {
+	transform: translateY(-4px);
 }
