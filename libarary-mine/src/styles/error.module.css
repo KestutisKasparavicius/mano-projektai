@@ -1,13 +1,12 @@
-html {
+.error {
+	height: 100vh;
 	background: #db771a;
 	font-family: sans-serif;
-}
-.error {
-	padding: 10rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-img {
-	width: 300px;
+	& img {
+		width: 300px;
+		margin-top: 10rem;
+	}
 }

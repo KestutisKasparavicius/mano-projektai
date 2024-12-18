@@ -1,0 +1,18 @@
+:root {
+	--bookcase-colour: #743624;
+	--cabinet-colour: #c25e2c;
+	--bookcase-background: #7e3d2f;
+}
+
+body {
+	min-height: 100%;
+	background: url('../assets/bookstore4k.jpg');
+	background-size: 100% 100%;
+}
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	height: 100vh;
+}

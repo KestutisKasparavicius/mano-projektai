@@ -1,0 +1,23 @@
+.bookshelf {
+	background-color: var(--bookcase-background);
+	display: flex;
+}
+
+.book {
+	min-width: 5%;
+	text-align: center;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	background-color: orange;
+	transition: all 0.13s ease-in-out;
+}
+
+.book:hover {
+	transform: translateY(-35px);
+	scale: 1.08;
+	cursor: pointer;
+
+	-webkit-box-shadow: 0px 0px 18px 12px rgba(255, 255, 255, 0.76);
+	-moz-box-shadow: 0px 0px 18px 12px rgba(255, 255, 255, 0.76);
+	box-shadow: 0px 0px 18px 12px rgba(255, 255, 255, 0.76);
+}

@@ -1,18 +1,16 @@
 import React from 'react'
-
+import BookcaseCSS from "../styles/bookcase.module.css"
 const Bookcase = ({children}) => {
   return (
-    <main>
-    <div className="bookcase">
-  <div className='bookshelf-container'>
+    <div className={BookcaseCSS.bookcase}>
+  <div className={BookcaseCSS.container}>
     {children}
   </div>
-  <div className='cabinet'>
+  <div className={BookcaseCSS.cabinet}>
     <span className="door">&#128996;</span>
     <span className="door">&#128996;</span>
   </div>
     </div>
-  </main>
   )
 }
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Bookcase from '../components/Bookcase';
 import Header from '../components/Header';
 import Error from '../components/Error';
-import Book_selection from '../components/Book_selection';
+import Bookshelf from '../components/Bookshelf';
 
 const Home = () => {
   const [isLoading, setLoading] = useState(false);
@@ -43,11 +43,13 @@ const Home = () => {
   return (
     <>
     <Header />
+    <main className='page'>
     <Bookcase>
-      <Book_selection genre={"Classic"} bookList={data}/>
-      <Book_selection genre={"Novel"} bookList={data}/>
-      <Book_selection genre={"Sci-fi"} bookList={data}/>
+      <Bookshelf genre={"Classic"} bookList={data}/>
+      <Bookshelf genre={"Novel"} bookList={data}/>
+      <Bookshelf genre={"Sci-fi"} bookList={data}/>
     </Bookcase>
+    </main>
     </>
     
   )
