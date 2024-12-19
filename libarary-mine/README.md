@@ -9,3 +9,7 @@ https://www.freepik.com/premium-ai-image/cozy-bookstore-with-shelves-full-books-
 
 pastels for bookcase
 https://colorhunt.co/palette/8fbdd3e4d1b9be8c63a97155
+
+Book darys fetcha palei URL, ir kol fetchins pati knyga bus uzversta, tik virselis matysis, o kai pafetchins pilnai, tada jin atsivers.
+
+pvz http://localhost:5173/reading-room/novel, turetu rodyti knygu lentyna butent is tos kategorijos, cia naudosiu bookshelf componenta, ir kazkur fetcha darysiu gal per ji ar per tevini elementa
