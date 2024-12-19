@@ -1,6 +1,7 @@
 .bookshelf {
 	background-color: var(--bookcase-background);
 	display: flex;
+	padding: 0;
 }
 
 .book {
@@ -10,6 +11,7 @@
 	text-orientation: mixed;
 	background-color: orange;
 	transition: all 0.13s ease-in-out;
+	list-style: none;
 }
 
 .book:hover {
