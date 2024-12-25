@@ -9,7 +9,7 @@
 .container {
 	display: grid;
 	grid-auto-rows: 33%;
-	gap: 1rem;
+	gap: 0.5rem;
 	grid-row: span 2;
 	margin: 1rem;
 	background-color: var(--bookcase-colour);
