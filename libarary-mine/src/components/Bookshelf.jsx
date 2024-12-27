@@ -28,5 +28,8 @@ const Bookshelf = ({bookList, genre}) => {
   </div>
   )
 }
-Bookshelf.propTypes = {Object, String}
+Bookshelf.propTypes = {
+  bookList: Array,
+  genre: String
+}
 export default Bookshelf
