@@ -8,7 +8,7 @@ const Bookshelf = ({bookList, genre}) => {
     <ul className={BookshelfCSS.bookshelf}>
     {bookList.map((item) => {
       return (
-        <Link key={item.id} to={`about/${item.kategorija}/${item.pavadinimas}`}>
+        <Link key={item.id} to={`about/${item.kategorija}/${item.id}`}>
       <li className={BookshelfCSS.book} key={item.id}>
         {item.pavadinimas} 
         <span className={BookshelfCSS.tooltip} title="description">
