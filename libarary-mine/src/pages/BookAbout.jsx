@@ -55,7 +55,9 @@ const BookAbout = () => {
         </div>
         <div className={BookAboutCSS.descriptionWrapper}>
           <p className={[BookAboutCSS.para, BookAboutCSS.description].join(" ")}>{data.aprasimas}</p>
-        <Link className={BookAboutCSS.link}>Preview...</Link>
+        <Link to={{
+          pathname: `/reading-room/${data.kategorija}/${data.id}`,
+        }} className={BookAboutCSS.link}>Preview...</Link>
         </div>
       </article>
     </div>
