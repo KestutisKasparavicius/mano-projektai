@@ -24,7 +24,7 @@ export default {
 			//
 			// Cia query ar params naudoti?
 
-			const result = await GetBookById(req.db, req.query.id);
+			const result = await GetBookById(req.db, req.params.id);
 			res.status(200).json(result);
 		} catch {
 			res.status(404).json({ message: 'Data with matching ID not found' });
