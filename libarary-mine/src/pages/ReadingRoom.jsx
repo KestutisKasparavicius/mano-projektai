@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes, { object } from 'prop-types'
 import { Outlet } from 'react-router';
 
-const ReadingRoom = ({children}) => {
+const ReadingRoom = () => {
   const [book, setBook] = useState([]);
 
 
@@ -17,6 +17,5 @@ const ReadingRoom = ({children}) => {
   )
 }
 
-ReadingRoom.propTypes = {Object}
 
 export default ReadingRoom
