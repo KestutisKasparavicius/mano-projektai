@@ -1,0 +1,56 @@
+.page {
+	height: 100vh;
+	font-family: sans-serif;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.bookContainer {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: burlywood;
+	width: 70vw;
+	height: 80vh;
+	padding: 1rem;
+	border: 2rem var(--bookcase-background);
+}
+
+.book {
+	transform: rotateY(-30deg);
+	position: relative;
+	transform-style: preserve-3d;
+	width: 200px;
+	height: 300px;
+	transition: transform 1s ease;
+	animation: 1s ease 0s 1 initAnimation;
+}
+
+.bookPage {
+	width: 50%;
+	height: 90%;
+	overflow: scroll;
+}
+.text {
+	text-wrap: wrap;
+	font-family: inherit;
+}
+.navBar {
+	display: flex;
+	justify-content: center;
+	height: fit-content;
+	& a {
+		text-decoration: none;
+		color: black;
+		transition: transform 0.13s ease;
+	}
+	& a:hover {
+		transform: translateY(-5px);
+		scale: 1.15;
+	}
+}
+
+.icon {
+	width: 20px;
+	margin-left: 5px;
+}
