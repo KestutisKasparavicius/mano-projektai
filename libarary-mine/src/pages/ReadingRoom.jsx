@@ -35,8 +35,6 @@ const ReadingRoom = ({ children }) => {
 	}
 
 	return (
-		//
-		// Cia children eina, ir per juos pareina parinkta knyga is bookselection. Manrods....
 		<>
 			<Outlet context={[book]} />
 		</>
