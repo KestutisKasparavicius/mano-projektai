@@ -16,6 +16,23 @@ export default {
 			result.map((item) => {
 				const genre = item.kategorija.toLowerCase().replace(' ', '-');
 				item.kategorija = genre;
+
+				let words = item.knygos_perziura.trim().split(' ');
+				const middle = Math.round(words.length / 2);
+
+				const pageBreak = (indexItem) => {
+					for (let i = indexItem - 30; i < indexItem + 30; i++) {
+						if (words[i].includes('\n\n') == true) {
+							words[i] = words[i].replace('\n\n', '<!-- PAGE -->');
+							return words.join(' ');
+						} else {
+							continue;
+						}
+					}
+				};
+				const stringy = pageBreak(middle);
+
+				item.knygos_perziura = stringy;
 			});
 			res.status(200).json(result);
 		} catch {
@@ -25,10 +42,29 @@ export default {
 
 	show: async (req, res, next) => {
 		try {
-			//
-			// Cia query ar params naudoti?
-
 			const result = await GetBookById(req.db, req.params.id);
+			result.map((item) => {
+				const genre = item.kategorija.toLowerCase().replace(' ', '-');
+				item.kategorija = genre;
+
+				let words = item.knygos_perziura.trim().split(' ');
+				const middle = Math.round(words.length / 2);
+
+				const pageBreak = (indexItem) => {
+					for (let i = indexItem - 30; i < indexItem + 30; i++) {
+						if (words[i].includes('\n\n') == true) {
+							const temp = words[i].replace('\n\n', '<!-- PAGE -->');
+							words[i] = temp;
+							return words.join(' ');
+						} else {
+							continue;
+						}
+					}
+				};
+				const stringy = pageBreak(middle);
+
+				item.knygos_perziura = stringy;
+			});
 			res.status(200).json(result);
 		} catch {
 			res.status(404).json({ message: 'Data with matching ID not found' });
