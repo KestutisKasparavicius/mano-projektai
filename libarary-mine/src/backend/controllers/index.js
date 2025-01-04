@@ -29,6 +29,10 @@ export default {
 							continue;
 						}
 					}
+					//
+					// Jeigu jau yra db irasas su break'u, ji dabar grazina, nes pries tai nieko negrazino
+
+					return item.knygos_perziura;
 				};
 				const stringy = pageBreak(middle);
 
@@ -60,6 +64,10 @@ export default {
 							continue;
 						}
 					}
+					//
+					// Jeigu jau yra db irasas su break'u, ji dabar grazina, nes pries tai nieko negrazino
+
+					return item.knygos_perziura;
 				};
 				const stringy = pageBreak(middle);
 
