@@ -13,6 +13,10 @@ export default {
 	index: async (req, res, next) => {
 		try {
 			const result = await GetBooks(req.db);
+			result.map((item) => {
+				const genre = item.kategorija.toLowerCase().replace(' ', '-');
+				item.kategorija = genre;
+			});
 			res.status(200).json(result);
 		} catch {
 			res.status(404).json({ message: 'Data not found' });
