@@ -7,7 +7,7 @@
 }
 
 .book {
-	min-width: 5%;
+	width: clamp(5%, 3em, 15%);
 	text-align: center;
 	writing-mode: vertical-rl;
 	text-orientation: mixed;
@@ -15,6 +15,10 @@
 	transition: all 0.13s ease-in-out;
 	list-style: none;
 	position: relative;
+	& a {
+		text-decoration: none;
+		color: inherit;
+	}
 }
 
 .book:hover {

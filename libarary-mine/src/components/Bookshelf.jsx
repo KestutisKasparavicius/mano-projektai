@@ -8,8 +8,8 @@ const Bookshelf = ({ bookList, genre }) => {
 			<ul className={BookshelfCSS.bookshelf}>
 				{bookList.map((item) => {
 					return (
-						<Link key={item.id} to={`about/${item.kategorija}/${item.id}`}>
-							<li className={BookshelfCSS.book} key={item.id}>
+						<li className={BookshelfCSS.book} key={item.id}>
+							<Link to={`about/${item.kategorija}/${item.id}`}>
 								{item.pavadinimas}
 								<span className={BookshelfCSS.tooltip} title="description">
 									{item.pavadinimas}
@@ -19,8 +19,8 @@ const Bookshelf = ({ bookList, genre }) => {
 									{item.puslapiai} pages
 									<br />
 								</span>
-							</li>
-						</Link>
+							</Link>
+						</li>
 					);
 				})}
 			</ul>
