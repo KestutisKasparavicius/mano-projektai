@@ -5,11 +5,12 @@ import {
 	GetBookById,
 	GetBooks,
 } from '../models/bookData.js';
-
+import { body, param, validationResult } from 'express-validator';
 //
 // Cia kazkur validavima mandrods reikia padaryti
 
 export default {
+	idParamValidator: () => param('id').isInt(),
 	index: async (req, res, next) => {
 		try {
 			const result = await GetBooks(req.db);
@@ -46,34 +47,37 @@ export default {
 
 	show: async (req, res, next) => {
 		try {
-			const result = await GetBookById(req.db, req.params.id);
-			result.map((item) => {
-				const genre = item.kategorija.toLowerCase().replace(' ', '-');
-				item.kategorija = genre;
+			const validation = validationResult(req);
+			if (validation.isEmpty()) {
+				const result = await GetBookById(req.db, req.params.id);
+				result.map((item) => {
+					const genre = item.kategorija.toLowerCase().replace(' ', '-');
+					item.kategorija = genre;
 
-				let words = item.knygos_perziura.trim().split(' ');
-				const middle = Math.round(words.length / 2);
+					let words = item.knygos_perziura.trim().split(' ');
+					const middle = Math.round(words.length / 2);
 
-				const pageBreak = (indexItem) => {
-					for (let i = indexItem - 30; i < indexItem + 30; i++) {
-						if (words[i].includes('\n\n') == true) {
-							const temp = words[i].replace('\n\n', '<!-- PAGE -->');
-							words[i] = temp;
-							return words.join(' ');
-						} else {
-							continue;
+					const pageBreak = (indexItem) => {
+						for (let i = indexItem - 30; i < indexItem + 30; i++) {
+							if (words[i].includes('\n\n') == true) {
+								const temp = words[i].replace('\n\n', '<!-- PAGE -->');
+								words[i] = temp;
+								return words.join(' ');
+							} else {
+								continue;
+							}
 						}
-					}
-					//
-					// Jeigu jau yra db irasas su break'u, ji dabar grazina, nes pries tai nieko negrazino
+						//
+						// Jeigu jau yra db irasas su break'u, ji dabar grazina, nes pries tai nieko negrazino
 
-					return item.knygos_perziura;
-				};
-				const stringy = pageBreak(middle);
+						return item.knygos_perziura;
+					};
+					const stringy = pageBreak(middle);
 
-				item.knygos_perziura = stringy;
-			});
-			res.status(200).json(result);
+					item.knygos_perziura = stringy;
+				});
+				res.status(200).json(result);
+			}
 		} catch {
 			res.status(404).json({ message: 'Data with matching ID not found' });
 		}

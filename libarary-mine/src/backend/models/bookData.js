@@ -9,7 +9,7 @@ export async function GetBooks(db) {
 		return rows;
 	} catch (err) {
 		console.log(err);
-		return null;
+		return err;
 	}
 }
 
