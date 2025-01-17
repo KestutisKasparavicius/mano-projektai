@@ -1,0 +1,20 @@
+.chessboard {
+	height: 70%;
+	width: 70%;
+	margin: 12.5% auto 0 auto;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(8, 1fr);
+}
+
+.white {
+	font-size: 2rem;
+}
+
+.square {
+	background-color: black;
+}
+
+.black {
+	background-color: black;
+}
