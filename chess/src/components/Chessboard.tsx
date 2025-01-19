@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import key from "../modules/keyGenerator.ts"
 import CSS from '../styles/ChessboardCSS.module.css'
 
 
@@ -17,32 +18,42 @@ class Square {
     // laikinai paliksim number del debuginimo
   ) {}
 }
+
+
 function rowGenerator(array: Square[], param: boolean) {
+  const helper = key();
   if (param == true) {
     for (let i = 1; i < 9; i++) {
       if (i % 2 == 0) {
-        const square = new Square(i,true, true, "b", 2, i)
+        const square = new Square(helper.getKey(),true, true, "b", 2, helper.getKey())
+        helper.upKey()
         array.push(square)
     }
         else {
-          const square = new Square(i,true, false, "b", 2, i)
+          const square = new Square(helper.getKey(),true, false, "b", 2, helper.getKey())
           array.push(square)
+          helper.upKey()
         }
+
     }
   } else {
     for (let i = 1; i < 9; i++) {
       if (i % 2 == 0) {
-        const square = new Square(i,true, false, "b", 2, i)
+        const square = new Square(helper.getKey(),true, false, "b", 2, helper.getKey())
+        helper.upKey()
         array.push(square)
     }
         else {
-          const square = new Square(i,true, true, "b", 2, i)
+          const square = new Square(helper.getKey(),true, true, "b", 2, helper.getKey())
+          helper.upKey()
           array.push(square)
         }
     }
   }
   
 }
+
+
 
 function gridGenerator() {
     const grid: Square[] = [];
@@ -57,6 +68,7 @@ function gridGenerator() {
     return grid
 }
 const demo = gridGenerator()
+console.log(demo)
 const chessboard = () => {
 
   return (
