@@ -1,12 +1,12 @@
-import React from 'react'
-import { useState } from 'react'
-import key from "../modules/keyGenerator.ts"
-import CSS from '../styles/ChessboardCSS.module.css'
-
+import React from 'react';
+import { useReducer } from 'react';
+import key from "../modules/keyGenerator.ts";
+import CSS from '../styles/ChessboardCSS.module.css';
+import GridSquare from './GridSquare.tsx';
 
 class Square {
   constructor(
-    public id?: number,
+    public id: number,
     public active: boolean = false,
     public white: boolean = true,
     public file: string = 'a',
@@ -68,14 +68,41 @@ function gridGenerator() {
     return grid
 }
 const demo = gridGenerator()
-console.log(demo)
-const chessboard = () => {
 
+
+interface Action {
+  type: "reset" | "move" | "start"
+}
+
+function reducer(state: Square[], action: Action) {
+  const { type } = action;
+  
+   switch (type) {
+    case "start":
+      state.map((item) => {
+        if (item.id == 53) {
+          item.piece = 400
+        }
+      })
+   }
+}
+const Chessboard = () => {
+  const [state, dispatch] = useReducer(reducer, demo);
+  const changeSquare = (inputId: number) => {
+    const id = inputId
+    console.log(id)
+  }
   return (
     <div className={CSS.chessboard}>
-      {demo.map(item => <div className={`${item.white ? CSS.white : CSS.black}` } key={item.id}>{item.piece}</div>)}
+      {state.map((item: Square) => 
+      <GridSquare squareClass={`${item.white ? CSS.white : CSS.black}`}
+      key={item.id}
+      onClickHandler={() => { changeSquare(item.id)}}
+      children={"ello"}
+      />
+      )}
     </div>
   )
 }
 
-export default chessboard
+export default Chessboard
