@@ -5,7 +5,7 @@ import CSS from '../styles/ChessboardCSS.module.css';
 import GridSquare from './GridSquare.tsx';
 import Chesspiece from './Chesspiece.tsx';
 import file from '../modules/fileGenerator.ts';
-
+import boardSetup from '../modules/boardSetup.ts';
 class Square {
   constructor(
     public id: number,
@@ -21,6 +21,8 @@ class Square {
   ) {}
 }
 
+//
+// Po kurio laiko sutvarkyti modulius i viena kintamaji, nes dabar griozdiskai atrodo 
 
 function rowGenerator(array: Square[], param: boolean, rank: number) {
   const helper = key();
@@ -28,7 +30,7 @@ function rowGenerator(array: Square[], param: boolean, rank: number) {
   if (param == true) {
     for (let i = 1; i < 9; i++) {
       if (i % 2 == 0) {
-        const square = new Square(helper.getKey(),true, true,helperForFile(i),rank, helper.getKey())
+        const square = new Square(helper.getKey(),true, true, helperForFile(i),rank, helper.getKey())
         helper.upKey()
         array.push(square)
     }
@@ -73,9 +75,12 @@ function gridGenerator() {
 //
 // Ziauriai keistai veikia map, pakeitus reducerio antra parama is demo i demoPre jis dabar rodo modifikuota array'u, pakeist veliau!
 const demoPre = gridGenerator();
-const demo = demoPre.map((item: Square) => {if (item.id < 9) { return item.piece = 200} return item});
-  console.log(demoPre);
-console.log(demo);
+const demo = demoPre.map((item: Square) => { if (item.id < 12) {return { ...item, piece: "KAS CIA" };} return item;
+});
+const demoFFF = boardSetup
+demoFFF.start(demo)
+//   console.log(demoPre);
+// console.log(demo);
 
 interface Action {
   type: "reset" | "move" | "start"
