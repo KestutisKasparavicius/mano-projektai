@@ -74,11 +74,11 @@ function gridGenerator() {
 }
 //
 // Ziauriai keistai veikia map, pakeitus reducerio antra parama is demo i demoPre jis dabar rodo modifikuota array'u, pakeist veliau!
-const demoPre = gridGenerator();
-const demo = demoPre.map((item: Square) => { if (item.id < 12) {return { ...item, piece: "KAS CIA" };} return item;
-});
+const demo = gridGenerator();
+
+
 const demoFFF = boardSetup
-demoFFF.start(demo)
+let demoSomething = demoFFF.start(demo)
 //   console.log(demoPre);
 // console.log(demo);
 
@@ -91,16 +91,13 @@ function reducer(state: Square[], action: Action) {
   
    switch (type) {
     case "start":
-      state.map((item) => {
-        if (item.id == 53) {
-          item.piece = 400
-        }
+    
         console.log(state)
-      });
+      
    }
 }
 const Chessboard = () => {
-  const [state, dispatch] = useReducer(reducer, demoPre);
+  const [state, dispatch] = useReducer(reducer, demoSomething);
   const changeSquare = (inputId: number) => {
     const id = inputId
     console.log(id)
@@ -112,7 +109,7 @@ const Chessboard = () => {
 
       <GridSquare squareClass={`${item.white ? CSS.white : CSS.black}`}
       key={item.id}
-      onClickHandler={() => { changeSquare(item.id)}}
+      onClickHandler={() => {console.log(demoSomething); changeSquare(item.id)}}
       children={item.piece}
       />
       )}
