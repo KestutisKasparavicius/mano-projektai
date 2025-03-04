@@ -1,4 +1,4 @@
-type BoardItem = { rank: number; file: string; piece?: string; [key: string]: any };
+type BoardItem = { rank: number; file: string; piece: string; [key: string]: any };
 export default {
     start: (board: BoardItem[]) => {
         // laikyti gatova chessboarda, kad kai bus daromi veiksmai, naudoti kaip refrence kurie pajudejo ir nebeturi "specialiu" ejimu pvz pawn 2 tile 1st
