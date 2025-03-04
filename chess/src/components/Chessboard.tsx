@@ -13,11 +13,7 @@ class Square {
     public white: boolean = true,
     public file: string,
     public rank: number,
-    public piece: number = 1
-    // public piece: 'pawn' | 'rook' | 'bishop' | 'knight' | 'queen' | 'king' = 'pawn'
-    
-    //
-    // laikinai paliksim number del debuginimo
+    public piece: 'pawn' | 'rook' | 'bishop' | 'knight' | 'queen' | 'king' | " "
   ) {}
 }
 
@@ -30,12 +26,12 @@ function rowGenerator(array: Square[], param: boolean, rank: number) {
   if (param == true) {
     for (let i = 1; i < 9; i++) {
       if (i % 2 == 0) {
-        const square = new Square(helper.getKey(),true, true, helperForFile(i),rank, helper.getKey())
+        const square = new Square(helper.getKey(),true, true, helperForFile(i),rank, " ")
         helper.upKey()
         array.push(square)
     }
         else {
-          const square = new Square(helper.getKey(),true, false, helperForFile(i),rank, helper.getKey())
+          const square = new Square(helper.getKey(),true, false, helperForFile(i),rank, " ")
           array.push(square)
           helper.upKey()
         }
@@ -44,12 +40,12 @@ function rowGenerator(array: Square[], param: boolean, rank: number) {
   } else {
     for (let i = 1; i < 9; i++) {
       if (i % 2 == 0) {
-        const square = new Square(helper.getKey(),true, false, helperForFile(i),rank, helper.getKey())
+        const square = new Square(helper.getKey(),true, false, helperForFile(i),rank, " ")
         helper.upKey()
         array.push(square)
     }
         else {
-          const square = new Square(helper.getKey(),true, true, helperForFile(i),rank, helper.getKey())
+          const square = new Square(helper.getKey(),true, true, helperForFile(i),rank, " ")
           helper.upKey()
           array.push(square)
         }
@@ -74,13 +70,11 @@ function gridGenerator() {
 }
 //
 // Ziauriai keistai veikia map, pakeitus reducerio antra parama is demo i demoPre jis dabar rodo modifikuota array'u, pakeist veliau!
-const demo = gridGenerator();
+const vanillaBoard = gridGenerator();
 
 
-const demoFFF = boardSetup
-let demoSomething = demoFFF.start(demo)
-//   console.log(demoPre);
-// console.log(demo);
+const boardMethods = boardSetup
+const boardInstance = boardMethods.start(vanillaBoard)
 
 interface Action {
   type: "reset" | "move" | "start"
@@ -91,13 +85,15 @@ function reducer(state: Square[], action: Action) {
   
    switch (type) {
     case "start":
-    
+        dispatch(["ello"])
         console.log(state)
       
    }
 }
+
 const Chessboard = () => {
-  const [state, dispatch] = useReducer(reducer, demoSomething);
+  const [state, dispatch] = useReducer(reducer, boardInstance);
+
   const changeSquare = (inputId: number) => {
     const id = inputId
     console.log(id)
@@ -109,8 +105,8 @@ const Chessboard = () => {
 
       <GridSquare squareClass={`${item.white ? CSS.white : CSS.black}`}
       key={item.id}
-      onClickHandler={() => {console.log(demoSomething); changeSquare(item.id)}}
-      children={item.piece}
+      onClickHandler={() => {console.log(item.piece, item.rank, item.file, boardInstance)}}
+      children={<Chesspiece selection={item.piece}/>}
       />
       )}
     </div>
