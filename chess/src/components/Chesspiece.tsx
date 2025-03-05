@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Chesspiece = ({selection}: { selection: "pawn" | "rook" | "bishop" | "knight" | "queen" | "king" }) => {
+const Chesspiece = ({selection}: { selection: "pawn" | "rook" | "bishop" | "knight" | "queen" | "king" | " "}) => {
   const pieces = {
     pawn: "Pawn",
     rook: "Rook",
