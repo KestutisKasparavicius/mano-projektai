@@ -74,7 +74,7 @@ const vanillaBoard = gridGenerator();
 
 
 const boardMethods = boardSetup
-const boardInstance = boardMethods.start(vanillaBoard)
+const initializer = () => boardMethods.start(vanillaBoard)
 
 interface Action {
   type: "reset" | "move" | "start"
@@ -84,28 +84,28 @@ function reducer(state: Square[], action: Action) {
   const { type } = action;
   
    switch (type) {
-    case "start":
-        dispatch(["ello"])
-        console.log(state)
+    default: {
+       
+      console.log(state) }
       
    }
 }
 
 const Chessboard = () => {
-  const [state, dispatch] = useReducer(reducer, boardInstance);
-
+  const [state, dispatch] = useReducer(reducer, [], initializer);
   const changeSquare = (inputId: number) => {
     const id = inputId
     console.log(id)
   }
   return (
+    
     <div className={CSS.chessboard}>
 
       {state.map((item: Square) => 
 
       <GridSquare squareClass={`${item.white ? CSS.white : CSS.black}`}
       key={item.id}
-      onClickHandler={() => {console.log(item.piece, item.rank, item.file, boardInstance)}}
+      onClickHandler={() => {console.log(item.piece, item.rank, item.file, vanillaBoard)}}
       children={<Chesspiece selection={item.piece}/>}
       />
       )}
